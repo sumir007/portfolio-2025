@@ -4,7 +4,7 @@ import resumePdf from './assets/resume.pdf'; // Import your resume PDF
 
 function App() {
   const [expandedCard, setExpandedCard] = useState(null); // Tracks which card is expanded
- // const [currentCardIndex, setCurrentCardIndex] = useState(0); // Tracks current card index for navigation
+  const [currentCardIndex, setCurrentCardIndex] = useState(0); // Tracks current card index for navigation
   const [currentSection, setCurrentSection] = useState(null); // Tracks which section is active
 
   // Sample data for all sections
@@ -122,7 +122,7 @@ function App() {
               {expandedCard === index && currentSection === 'experience' && (
                 <div className="expanded-content">
                   <button className="close-button" onClick={handleCloseCard}>×</button>
-                  <p>{exp.details}</p>
+                  <p>{sectionData[currentSection][currentCardIndex].details}</p>
                   <div className="nav-buttons">
                     <button onClick={handlePrevCard}>Previous</button>
                     <button onClick={handleNextCard}>Next</button>
@@ -146,7 +146,7 @@ function App() {
               {expandedCard === index && currentSection === 'projects' && (
                 <div className="expanded-content">
                   <button className="close-button" onClick={handleCloseCard}>×</button>
-                  <p>{project.details}</p>
+                  <p>{sectionData[currentSection][currentCardIndex].details}</p>
                   <div className="nav-buttons">
                     <button onClick={handlePrevCard}>Previous</button>
                     <button onClick={handleNextCard}>Next</button>
@@ -170,7 +170,7 @@ function App() {
               {expandedCard === index && currentSection === 'publications' && (
                 <div className="expanded-content">
                   <button className="close-button" onClick={handleCloseCard}>×</button>
-                  <p>{pub.details}</p>
+                  <p>{sectionData[currentSection][currentCardIndex].details}</p>
                   <div className="nav-buttons">
                     <button onClick={handlePrevCard}>Previous</button>
                     <button onClick={handleNextCard}>Next</button>
