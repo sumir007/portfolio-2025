@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import About from './components/About';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Publications from './components/Publications';
-import Contact from './components/Contact';
 import resumePdf from './assets/resume.pdf'; // Import your resume PDF
 
 function App() {
@@ -55,17 +50,20 @@ function App() {
   };
 
   // Close expanded card
-  const handleCloseCard = () => {
+  const handleCloseCard = (e) => {
+    e.stopPropagation(); // Stop event propagation
     setExpandedCard(null);
     setCurrentSection(null);
   };
 
   // Navigate between cards
-  const handleNextCard = () => {
+  const handleNextCard = (e) => {
+    e.stopPropagation(); // Stop event propagation
     setCurrentCardIndex((prevIndex) => (prevIndex + 1) % sectionData[currentSection].length);
   };
 
-  const handlePrevCard = () => {
+  const handlePrevCard = (e) => {
+    e.stopPropagation(); // Stop event propagation
     setCurrentCardIndex((prevIndex) => (prevIndex - 1 + sectionData[currentSection].length) % sectionData[currentSection].length);
   };
 
