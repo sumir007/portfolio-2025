@@ -4,7 +4,7 @@ import resumePdf from './assets/resume.pdf'; // Import your resume PDF
 
 function App() {
   const [expandedCard, setExpandedCard] = useState(null); // Tracks which card is expanded
-  const [currentCardIndex, setCurrentCardIndex] = useState(0); // Tracks current card index for navigation
+ // const [currentCardIndex, setCurrentCardIndex] = useState(0); // Tracks current card index for navigation
   const [currentSection, setCurrentSection] = useState(null); // Tracks which section is active
 
   // Sample data for all sections
