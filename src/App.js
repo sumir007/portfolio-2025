@@ -82,6 +82,11 @@ function App() {
     );
 
     sections.forEach((section) => observer.observe(section));
+
+    // Cleanup observer on unmount
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
   }, []);
 
   return (
@@ -194,7 +199,7 @@ function App() {
           <div className="card">
             <h3>Get in Touch</h3>
             <p>Feel free to reach out to me for collaborations or just a friendly chat!</p>
-            <a href="mailto:you@example.com" className="button">Email Me</a>
+            <a href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}`} className="button">Email Me</a>
           </div>
         </section>
       </main>
