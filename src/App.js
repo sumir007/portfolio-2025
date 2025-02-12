@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import resumePdf from './assets/resume.pdf'; // Import your resume PDF
-import sectionData from './components/section-data'; // Import sectionData from Experience.js
+import resumePdf from './assets/resume.pdf'; 
+import sectionData from './components/section-data'; 
+import { FaEnvelope, FaLinkedin, FaInstagram } from 'react-icons/fa'; 
+
 
 function App() {
   const [expandedCard, setExpandedCard] = useState(null); // Tracks which card is expanded
@@ -120,8 +122,11 @@ function App() {
               className="card"
               onClick={() => handleCardClick('experience', index)}
             >
+              <div className="card-header">
+              <img src={exp.logo} className="company-logo" />
               <h3>{exp.title}</h3>
               <h3>{exp.company}</h3>
+              </div>
               <p>{exp.description}</p>
             </div>
           ))}
@@ -135,7 +140,10 @@ function App() {
               className="card"
               onClick={() => handleCardClick('projects', index)}
             >
+              <div className="card-header">
+              <img src={project.logo} className="project-logo" />
               <h3>{project.title}</h3>
+              </div>
               <p>{project.description}</p>
             </div>
           ))}
@@ -149,7 +157,10 @@ function App() {
               className="card"
               onClick={() => handleCardClick('publications', index)}
             >
+               <div className="card-header">
+               <img src={pub.logo} className="publication-logo" />
               <h3>{pub.title}</h3>
+              </div>
               <p>{pub.description}</p>
             </div>
           ))}
@@ -168,7 +179,20 @@ function App() {
           <div className="card">
             <h3>Get in Touch</h3>
             <p>Feel free to reach out to me for collaborations or just a friendly chat!</p>
-            <a href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}`} className="button">Email Me</a>
+            <div className="social-links">
+              <a href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}`} className="social-link">
+                <FaEnvelope className="social-icon" />
+                <span>Email</span>
+              </a>
+              <a href="https://www.linkedin.com/in/sumir-srivastava" target="_blank" rel="noopener noreferrer" className="social-link">
+                <FaLinkedin className="social-icon" />
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://www.instagram.com/sumir-srivastava" target="_blank" rel="noopener noreferrer" className="social-link">
+                <FaInstagram className="social-icon" />
+                <span>Instagram</span>
+              </a>
+            </div>
           </div>
         </section>
       </main>
