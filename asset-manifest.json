@@ -1,16 +1,21 @@
 {
   "files": {
-    "main.css": "/portfolio-2025/static/css/main.ae0dd552.css",
-    "main.js": "/portfolio-2025/static/js/main.5aee60f8.js",
+    "main.css": "/portfolio-2025/static/css/main.e75e6d05.css",
+    "main.js": "/portfolio-2025/static/js/main.f5792591.js",
     "static/js/453.ed3810f9.chunk.js": "/portfolio-2025/static/js/453.ed3810f9.chunk.js",
     "static/media/resume.pdf": "/portfolio-2025/static/media/resume.3b3cc18559c1b6bf016c.pdf",
+    "static/media/birlasoft-logo.png": "/portfolio-2025/static/media/birlasoft-logo.79bfc7700534c355626d.png",
+    "static/media/shell-logo.png": "/portfolio-2025/static/media/shell-logo.a90fbaecc58c1ca2cfad.png",
+    "static/media/ieee-logo.jpg": "/portfolio-2025/static/media/ieee-logo.52e039f46fd97039a08c.jpg",
+    "static/media/opencv-logo.svg": "/portfolio-2025/static/media/opencv-logo.5fd12c99f9e43d178d887de59c03877b.svg",
     "index.html": "/portfolio-2025/index.html",
-    "main.ae0dd552.css.map": "/portfolio-2025/static/css/main.ae0dd552.css.map",
-    "main.5aee60f8.js.map": "/portfolio-2025/static/js/main.5aee60f8.js.map",
+    "static/media/ssd-logo.svg": "/portfolio-2025/static/media/ssd-logo.becb3a37ab123d454d68917348152537.svg",
+    "main.e75e6d05.css.map": "/portfolio-2025/static/css/main.e75e6d05.css.map",
+    "main.f5792591.js.map": "/portfolio-2025/static/js/main.f5792591.js.map",
     "453.ed3810f9.chunk.js.map": "/portfolio-2025/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae0dd552.css",
-    "static/js/main.5aee60f8.js"
+    "static/css/main.e75e6d05.css",
+    "static/js/main.f5792591.js"
   ]
 }
