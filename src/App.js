@@ -1,46 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import resumePdf from './assets/resume.pdf'; // Import your resume PDF
+import sectionData from './components/section-data'; // Import sectionData from Experience.js
 
 function App() {
   const [expandedCard, setExpandedCard] = useState(null); // Tracks which card is expanded
   const [currentCardIndex, setCurrentCardIndex] = useState(0); // Tracks current card index for navigation
   const [currentSection, setCurrentSection] = useState(null); // Tracks which section is active
-
-  // Sample data for all sections
-  const sectionData = {
-    experience: [
-      {
-        title: "Software Engineer at XYZ Corp",
-        description: "Developed and maintained web applications using modern technologies.",
-        details: "Full details about my role at XYZ Corp. I worked on projects involving React, Node.js, and AWS."
-      },
-      {
-        title: "Frontend Developer at ABC Inc",
-        description: "Built responsive and user-friendly interfaces using React and Redux.",
-        details: "Full details about my role at ABC Inc. I focused on improving the performance of the frontend."
-      }
-    ],
-    projects: [
-      {
-        title: "Project Name 1",
-        description: "A web application built with React and Node.js.",
-        details: "Full details about Project Name 1. It solves real-world problems using modern tech."
-      },
-      {
-        title: "Project Name 2",
-        description: "A mobile app built with React Native.",
-        details: "Full details about Project Name 2. It focuses on user experience and performance."
-      }
-    ],
-    publications: [
-      {
-        title: "Publication Title 1",
-        description: "Published in Journal XYZ.",
-        details: "Full details about Publication Title 1. It discusses innovative approaches to problem-solving."
-      }
-    ]
-  };
 
   // Handle card expansion
   const handleCardClick = (section, index) => {
@@ -54,6 +20,13 @@ function App() {
     e.stopPropagation(); // Stop event propagation
     setExpandedCard(null);
     setCurrentSection(null);
+  };
+
+  // Close expanded card when clicking outside
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains('overlay')) {
+      handleCloseCard(e);
+    }
   };
 
   // Navigate between cards
@@ -91,9 +64,33 @@ function App() {
 
   return (
     <div className="container">
+      {/* Overlay for expanded card */}
+      <div
+        className={`overlay ${expandedCard !== null ? 'visible' : ''}`}
+        onClick={handleOverlayClick}
+      />
+
+      {/* Expanded Card Popup */}
+      {expandedCard !== null && (
+        <div className="expanded-card-popup">
+          <button className="close-button" onClick={handleCloseCard}>×</button>
+          <h2>{sectionData[currentSection][currentCardIndex].title}</h2>
+          <h2>{sectionData[currentSection][currentCardIndex].company}</h2>
+          <h3>{sectionData[currentSection][currentCardIndex].description}</h3>
+                <ul>{sectionData[currentSection][currentCardIndex].details.map((point, index) => (
+          <li key={index}>{point}</li>
+            ))}
+                </ul>
+          <div className="nav-buttons">
+            <button onClick={handlePrevCard}>Previous</button>
+            <button onClick={handleNextCard}>Next</button>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <header className="header">
-        <h1>Your Name</h1>
+        <h1>Sumir Srivastava</h1>
         <nav className="navigation">
           <a href="#about" className="nav-link">About</a>
           <a href="#experience" className="nav-link">Experience</a>
@@ -110,7 +107,8 @@ function App() {
           <h2>About</h2>
           <div className="card">
             <h3>Who Am I?</h3>
-            <p>I’m a full-stack software engineer with a passion for building scalable and user-friendly applications. I specialize in JavaScript, React, Node.js, and cloud technologies.</p>
+            <p>I’m a full-stack software engineer with a passion for building scalable and user-friendly applications. I specialize in .Net, JavaScript, React, Node.js, and cloud technologies.</p>
+            <p>I am a graduate in Bachelor of Technology - Computer Science from Amity University, Noida Uttar Pradesh, India. </p>
           </div>
         </section>
 
@@ -119,21 +117,12 @@ function App() {
           {sectionData.experience.map((exp, index) => (
             <div
               key={index}
-              className={`card ${expandedCard === index && currentSection === 'experience' ? 'expanded' : ''}`}
+              className="card"
               onClick={() => handleCardClick('experience', index)}
             >
               <h3>{exp.title}</h3>
+              <h3>{exp.company}</h3>
               <p>{exp.description}</p>
-              {expandedCard === index && currentSection === 'experience' && (
-                <div className="expanded-content">
-                  <button className="close-button" onClick={handleCloseCard}>×</button>
-                  <p>{sectionData[currentSection][currentCardIndex].details}</p>
-                  <div className="nav-buttons">
-                    <button onClick={handlePrevCard}>Previous</button>
-                    <button onClick={handleNextCard}>Next</button>
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </section>
@@ -143,21 +132,11 @@ function App() {
           {sectionData.projects.map((project, index) => (
             <div
               key={index}
-              className={`card ${expandedCard === index && currentSection === 'projects' ? 'expanded' : ''}`}
+              className="card"
               onClick={() => handleCardClick('projects', index)}
             >
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              {expandedCard === index && currentSection === 'projects' && (
-                <div className="expanded-content">
-                  <button className="close-button" onClick={handleCloseCard}>×</button>
-                  <p>{sectionData[currentSection][currentCardIndex].details}</p>
-                  <div className="nav-buttons">
-                    <button onClick={handlePrevCard}>Previous</button>
-                    <button onClick={handleNextCard}>Next</button>
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </section>
@@ -167,21 +146,11 @@ function App() {
           {sectionData.publications.map((pub, index) => (
             <div
               key={index}
-              className={`card ${expandedCard === index && currentSection === 'publications' ? 'expanded' : ''}`}
+              className="card"
               onClick={() => handleCardClick('publications', index)}
             >
               <h3>{pub.title}</h3>
               <p>{pub.description}</p>
-              {expandedCard === index && currentSection === 'publications' && (
-                <div className="expanded-content">
-                  <button className="close-button" onClick={handleCloseCard}>×</button>
-                  <p>{sectionData[currentSection][currentCardIndex].details}</p>
-                  <div className="nav-buttons">
-                    <button onClick={handlePrevCard}>Previous</button>
-                    <button onClick={handleNextCard}>Next</button>
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </section>
@@ -206,7 +175,7 @@ function App() {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Sumir Srivastava. All rights reserved.</p>
       </footer>
     </div>
   );
