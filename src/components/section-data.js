@@ -6,6 +6,7 @@ import opencvLogo from './opencv-logo.svg';
 import ssdLogo from './ssd-logo.svg';
 import ieeeLogo from './ieee-logo.jpg';
 import taylorFrancisLogo from './taylor-francis-logo.png';
+import RagLogo from './RAG.png';
 
 const sectionData = {
   experience: [
@@ -13,12 +14,12 @@ const sectionData = {
       title: "Associate Software Engineer",
       company:"Shell",
       year:"7th August 2023 - Current",
-      description: "Developed and maintained web applications using modern technologies.",
-      details:[ "Technical and Domain: Supported enhancement requests and efficiently completed all enhancements while maintaining high-quality standards.", 
-        "Acquired in-depth knowledge of the technical and functional aspects of Market Risk domain.Understanding of SAS programming language.",
-        "Developed and delivered a POC for Risk Portfolio: This Proof of Concept (POC) included a front-end built with React and a back-end and API developed using the .NET Core framework and Azure SQL DB, aimed at enhancing efficiency and saving time.",
-        "Optimized Production Deployment Workflow: Collaborated with the lead developer to ensure seamless production deployments, addressing and resolving any deployment issues. ",
-        "Assisted in the migrations and created the pipelines for CI/CD implementations.",
+      description: "Developed and maintained Quant Portal, a full stack enterprise Market Risk / Commodity Risk Management application, supporting Quant Risk Analytics across multiple businesses lines inside Shell.",
+      details:[ "Technical and Domain: Implemented What-if scenario tool for Value at Risk (VaR) calculations, enabling users to assess and simulate exposure and price changes and compute risk metrics effectively.", 
+        "Developed VAR breach monitoring dashboards across 15+ business entities to track and analyze risk metrics, facilitating proactive risk management and expanding coverage across Shell's global trading operations.",
+        "Developed bulk upsert pipelines for multiple modules in the application, improving data management efficiency and reducing manual intervention, saving time for business users.",
+        "Streamlined the correction workflows by building entity-specific correction screens with full audit trails, ensuring regulatory compliance and reducing the time taken for corrections by 30%.",
+        "Served as a Software Developer on a business critical internal tool used by quantitative risk analysts and Shell traders globally and collaborated with traders and stakeholders to translate business requirements into technical solutions.",
         "Created Workflow using Power Platform: Extensively utilized Power Automate and Power BI to develop a flow that streamlines processes and improves efficiency."
       ],
       logo: shellLogo,
@@ -27,14 +28,23 @@ const sectionData = {
       title: "Software Engineering Intern",
       company:"Birlasoft",
       year:"9th May 2023 - 28th July 2023",
-      description: "Built CI/CD pipeline and configure static and dynamic code testing tools using Azure DevOps",
+      description: "Built CI/CD pipeline and configure static and dynamic code testing tools using Azure DevOps for an internal tool.",
       details: ["I worked on Azure DevOps. ",
-        "I had to create CI/CD pipelines for a project and integrating various tools and services for testing (automated dependency management tool, static application security testing, software composition analysis, DAST) for an ongoing project."
+        "Implemented CI/CD pipelines for an internal tool, automating the build, test, and deployment processes to enhance efficiency and reduce manual errors.",
+        "Configured static code analysis tools to ensure code quality and adherence to coding standards, resulting in improved code maintainability and reduced technical debt.",
+        "Set up dynamic code testing tools to identify and address runtime issues, enhancing the overall reliability and performance of the internal tool."
       ],
       logo: birlasoftLogo,
       }
   ],
   projects: [
+    {
+      title: "LLM assisted lightweight RAG",
+      description: "- A local lightweight Retrieval-Augmented Generation (RAG) pipeline.",
+      details: ["https://github.com/sumir007/llm-assisted-lightweight-rag -  local lightweight Retrieval-Augmented Generation (RAG) pipeline for extracting scheduling and monitoring data, and determining status from PDF using Large Language Models.",
+      "Combines deterministic lexical scoring, structural pattern boosts (dates/terms), and LLM-assisted query expansion for reliable legal document analysis."
+  ],      logo: RagLogo,
+},
     {
       title: "WayLane",
       description: "- Path Detection for Self-Driving Carts - A web application built with python using OpenCV.",

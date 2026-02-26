@@ -98,8 +98,8 @@ function App() {
           <a href="#experience" className="nav-link">Experience</a>
           <a href="#projects" className="nav-link">Projects</a>
           <a href="#publications" className="nav-link">Publications</a>
-          <a href="#cv" className="nav-link">CV/Resume</a>
-          <a href="#contact" className="nav-link">Contact</a>
+          <a href="#cv" className="nav-link-CV">CV/Resume</a>
+          <a href="#contact" className="nav-link">Contact Me!</a>
         </nav>
       </header>
 
@@ -108,9 +108,9 @@ function App() {
         <section id="about">
           <h2>About</h2>
           <div className="card">
-            <h3>Who Am I?</h3>
-            <p>I’m a full-stack software engineer with a passion for building scalable and user-friendly applications. I specialize in .Net, JavaScript, React, Node.js, and cloud technologies.</p>
-            <p>I am a graduate in Bachelor of Technology - Computer Science from Amity University, Noida Uttar Pradesh, India. </p>
+            <h3>Hello! Who Am I?</h3>
+            <p>I’m a full-stack software engineer experienced in   building scalable, reliable, and user-focused applications. My work primarily involves .NET, React, Node.js, and cloud platforms, with experience developing systems for quantitative risk analytics and enterprise data workflows.</p>
+            <p><br />I am a graduate in Bachelor of Technology - Computer Science from Amity University, Noida Uttar Pradesh, India. </p>
           </div>
         </section>
 
@@ -175,10 +175,10 @@ function App() {
         </section>
 
         <section id="contact">
-          <h2>Contact</h2>
+          <h2 className='set-to-black'>Contact Me!</h2>
           <div className="card">
-            <h3>Get in Touch</h3>
-            <p>Feel free to reach out to me for collaborations or just a friendly chat!</p>
+            <h3 className='set-to-black'>Get in Touch</h3>
+            <p className='set-to-black'>Feel free to reach out to me for collaborations or just a friendly chat!</p>
             <div className="social-links">
               <a href={`mailto:${process.env.REACT_APP_CONTACT_EMAIL}`} className="social-link">
                 <FaEnvelope className="social-icon" />
@@ -199,7 +199,7 @@ function App() {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2025 Sumir Srivastava. All rights reserved.</p>
+        <p>&copy; 2026 Sumir Srivastava. All rights reserved.</p>
       </footer>
     </div>
   );
