@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/portfolio-2025/static/css/main.0b982d44.css",
-    "main.js": "/portfolio-2025/static/js/main.be3c8b65.js",
+    "main.js": "/portfolio-2025/static/js/main.ef3fcf52.js",
     "static/js/453.ed3810f9.chunk.js": "/portfolio-2025/static/js/453.ed3810f9.chunk.js",
-    "static/media/resume.pdf": "/portfolio-2025/static/media/resume.a289b7d5f0d70755f2e6.pdf",
+    "static/media/resume.pdf": "/portfolio-2025/static/media/resume.476a21d421433f82b3cc.pdf",
     "static/media/RAG.png": "/portfolio-2025/static/media/RAG.0cc2e05963e9143eed09.png",
     "static/media/birlasoft-logo.png": "/portfolio-2025/static/media/birlasoft-logo.79bfc7700534c355626d.png",
     "static/media/shell-logo.png": "/portfolio-2025/static/media/shell-logo.a90fbaecc58c1ca2cfad.png",
@@ -12,11 +12,11 @@
     "index.html": "/portfolio-2025/index.html",
     "static/media/ssd-logo.svg": "/portfolio-2025/static/media/ssd-logo.becb3a37ab123d454d68917348152537.svg",
     "main.0b982d44.css.map": "/portfolio-2025/static/css/main.0b982d44.css.map",
-    "main.be3c8b65.js.map": "/portfolio-2025/static/js/main.be3c8b65.js.map",
+    "main.ef3fcf52.js.map": "/portfolio-2025/static/js/main.ef3fcf52.js.map",
     "453.ed3810f9.chunk.js.map": "/portfolio-2025/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0b982d44.css",
-    "static/js/main.be3c8b65.js"
+    "static/js/main.ef3fcf52.js"
   ]
 }
